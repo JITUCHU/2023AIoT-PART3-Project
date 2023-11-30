@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>마스크착용진단시스템</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>마스크 착용진단 시스템</h1>
+  </header>
+
+  <nav>
+    <a href="home.html">홈</a>
+    <a href="index.html">서비스</a>
+    <a href="call.html">연락</a>
+  </nav>
+
+  <section>
+    <h2>목적</h2>
+    <p>
+        최근 독감과 중국발 마이코플라즈마 폐렴이 유행하는 등</br>
+        감염병 예방을 위해서 다시금 마스크 착용이 중요해진 시기입니다.</br>
+        그래서 정신개조는 사람들에게 이번 겨울 마스크 착용의 중요성을 알리기 위해</br>
+        마스크 착용진단 시스템을 만들었습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2>마스크 착용진단 시스템이란?</h2>
+    <p>
+        구글의 teachable machine에 마스크 착용 여부를 모델학습시켜 만든 머신러닝 모델로</br>
+        감염병 예방 등을 위해 마스크 착용을 권고하기 위해 만들어진 시스템입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2>원리</h2>
+    <p>
+        구글의 teachable machine에서 타겟을 "Mask_Y, Mask_N" 두 가지로 분류하고,</br>
+        웹 캠으로 들어온 이미지 데이터로 모델학습 시켜 완성된 모델로</br>
+        마스크를 쓰고 안 쓰고에 따라 그 결과를 Mask_Y 또는 Mask_N으로 예측합니다.</br>
+        만약 웹 캠으로 들어오는 이미지 데이터가 Mask_N으로 분류될 시 웹 화면을 통해</br>
+        사용자에게 경고를 보내주게 됩니다.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 정신개조 PART3 프로젝트</p>
+  </footer>
+
+</body>
+</html>
