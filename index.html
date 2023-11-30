@@ -132,6 +132,12 @@
 
       async function predict() {
           const prediction = await model.predict(webcam.canvas);
+
+          const mask_n = prediction[1].probability;
+
+          if (mask_n >= 0.7) {
+            alert("마스크를 착용하고 있지 않습니다. 마스크를 착용해주세요.")
+          }
           for (let i = 0; i < maxPredictions; i++) {
               const classPrediction =
                   prediction[i].className + ": " + prediction[i].probability.toFixed(2);
