@@ -22,6 +22,11 @@ body {
       text-decoration: none;
       margin: 0 1rem;
     }
+    nav a:hover {
+      color: #27c3b6;
+      text-decoration: underline;
+      margin: 0 1rem;
+    }
     section {
       padding: 2rem;
     }
