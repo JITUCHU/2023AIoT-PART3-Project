@@ -130,14 +130,39 @@
           window.requestAnimationFrame(loop);
       }
 
-      async function predict() {
-          const prediction = await model.predict(webcam.canvas);
+      function clearLocalStorage() {
+    localStorage.removeItem("lastAlertDate");
+    }
+    clearLocalStorage();
 
-          const mask_n = prediction[1].probability;
+    let alertShown = false;
 
-          if (mask_n >= 0.7) {
-            alert("마스크를 착용하고 있지 않습니다. 마스크를 착용해주세요.")
-          }
+    async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+
+    const mask_yProbability = parseFloat(prediction[0].probability);
+    const mask_nProbability = parseFloat(prediction[1].probability);
+
+    const lastAlertDate = localStorage.getItem("lastAlertDate");
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    if (mask_nProbability >= 0.7 && !alertShown) {
+    alertShown = true;
+
+    alert("마스크를 착용하고 있지 않습니다. 마스크를 착용해주세요.");
+
+    if (lastAlertDate !== currentDate) {
+        const confirmation = confirm("위 창을 하루동안 보지 않으시겠습니까?");
+        if (confirmation) {
+            alert("정상적으로 처리되었습니다.");
+            localStorage.setItem("lastAlertDate", currentDate);
+            alertShown = true;
+        } else {
+            setTimeout(predict, 1000);
+            alertShown = false;
+        }
+    }
+}
           for (let i = 0; i < maxPredictions; i++) {
               const classPrediction =
                   prediction[i].className + ": " + prediction[i].probability.toFixed(2);
