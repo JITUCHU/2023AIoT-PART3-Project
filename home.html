@@ -3,75 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>마스크착용진단시스템</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #444;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-    section {
-      padding: 2rem;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    .mask-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: blink 1s infinite; /* 깜빡이는 효과를 위한 애니메이션 적용 */
-    }
-    .mask-image img {
-      width: 800px;
-      height: auto;
-    }
-    @keyframes blink {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
   <header>
-    <h1>마스크 착용진단 시스템</h1>
+    <h2>마스크 착용진단 시스템</h2>
   </header>
 
   <nav>
@@ -80,9 +16,20 @@
     <a href="call.html">연락</a>
   </nav>
 
+  <!-- 우측에 고정된 세로 네비게이션 바 -->
+  <nav class="fixed-nav">
+    <a href="home.html">홈</a>
+    <a href="index.html">서비스</a>
+    <a href="call.html">연락</a>
+  </nav>
+
   <div class="mask-image" id="maskImage">
     <img src="mask.png" alt="마스크 이미지">
   </div>
+
+  <section class="home-start">
+    <h1>마스크 착용 진단 시스템</br></h1>
+  </section>
 
   <section>
     <h2>목적</h2>
@@ -110,6 +57,12 @@
         마스크를 쓰고 안 쓰고에 따라 그 결과를 Mask_Y 또는 Mask_N으로 예측합니다.</br>
         만약 웹 캠으로 들어오는 이미지 데이터가 Mask_N으로 분류될 시 웹 화면을 통해</br>
         사용자에게 경고를 보내주게 됩니다.
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
     </p>
   </section>
 
@@ -127,6 +80,5 @@
       }, 3000); // 3초 후에 숨김
     };
   </script>
-
 </body>
 </html>
