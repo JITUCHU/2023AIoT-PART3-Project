@@ -1,0 +1,96 @@
+body {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .home-start {
+      font-family: 'SF_IceLemon';
+      font-size: 35px;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 270px;
+      text-align: center;
+    }
+    .mask-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: blink 3s infinite; /* 깜빡이는 효과를 위한 애니메이션 적용 */
+    }
+    .mask-image img {
+      width: 800px;
+      height: auto;
+    }
+    /* 우측에 고정된 세로 네비게이션 바 스타일 */
+    .fixed-nav {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column; /* 세로 방향으로 정렬 */
+    }
+    /* 네비게이션 바 항목 스타일 */
+    .fixed-nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @font-face {
+    font-family: 'SF_IceLemon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
